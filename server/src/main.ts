@@ -2,6 +2,13 @@
 import "dotenv/config";
 
 // Check database connection
+import type { RequestHandler } from "express";
+
+const sayWelcome: RequestHandler = (req, res) => {
+  res.send("Welcome to Wild Series !");
+};
+
+app.get("/", sayWelcome);
 // Note: This is optional and can be removed if the database connection
 // is not required when starting the application
 import "../database/checkConnection";
